@@ -17,10 +17,13 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-prettier": "^6.0.0",
+    "autoprefixer": "^10.2.5",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.0.0",
-    "prettier": "^2.2.1"
+    "postcss": "^8.2.10",
+    "prettier": "^2.2.1",
+    "tailwindcss": "^2.1.1"
   }
 }
