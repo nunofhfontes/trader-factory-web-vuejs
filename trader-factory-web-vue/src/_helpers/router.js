@@ -26,6 +26,7 @@ const router = createRouter({
         next();
       }
     },
+    // Uncomment this after fixing server redirect to index.html
     // { path: '/:notFound(.*)', component: NotFound }
   ],
 //   linkActiveClass: 'active',
