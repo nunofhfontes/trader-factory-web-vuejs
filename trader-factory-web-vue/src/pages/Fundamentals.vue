@@ -1,9 +1,9 @@
 <template>
-  <span>Dashboard</span>
+  <span>Fundamentas</span>
 </template>
 
 <script>
 export default {
-  name: "Dashboard",
+  name: "Fundamentas",
 };
 </script>
