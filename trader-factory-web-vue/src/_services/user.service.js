@@ -31,6 +31,16 @@ function logout() {
   localStorage.removeItem("user");
 }
 
+function getUser() {
+  const requestOptions = {
+    method: "GET",
+    headers: authHeader(),
+  };
+
+  // TODO - specify user
+  return fetch(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
+}
+
 function handleResponse(response) {
   return response.text().then((text) => {
     const data = text && JSON.parse(text);
