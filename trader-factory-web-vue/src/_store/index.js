@@ -1,10 +1,10 @@
-import Vue from 'vue';
-import { createStore } from 'vuex';
-// import Vuex from 'vuex';
+import Vue from "vue";
+import { createStore } from "vuex";
+import Vuex from "vuex";
 
-import { createStore } from 'vuex';
+// import { createStore } from 'vuex';
 
-import { users } from './users.module';
+import { users } from "./users.module";
 
 Vue.use(Vuex);
 
@@ -15,7 +15,8 @@ Vue.use(Vuex);
 // });
 
 export const store = new createStore({
-    modules: {
-        users
-    }
+  modules: {
+    // authentication,
+    users,
+  },
 });
