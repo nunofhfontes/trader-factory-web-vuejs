@@ -1,3 +1,6 @@
+import { userService } from "../_services";
+import { router } from "../_helpers";
+
 const user = JSON.parse(sessionStorage.getItem("user"));
 const initialState = user
   ? { status: { loggedIn: true }, user }
@@ -7,7 +10,20 @@ export const authentication = {
   namespaced: true,
   state: initialState,
   actions: {
-    login() {},
+    login({ dispatch, commit }, { username, password }) {
+      commit("loginRequest", { username });
+
+      userService.login(username, password).then(
+        (user) => {
+          commit("loginSuccess", user);
+          router.push("/");
+        },
+        (error) => {
+          commit("loginFailure", error);
+          dispatch("alert/error", error, { root: true });
+        }
+      );
+    },
     logout() {},
   },
   mutations: {
