@@ -24,7 +24,10 @@ export const authentication = {
         }
       );
     },
-    logout() {},
+    logout({ commit }) {
+      userService.logout();
+      commit("logout");
+    },
   },
   mutations: {
     loginRequest(state, user) {
