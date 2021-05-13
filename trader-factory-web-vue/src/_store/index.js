@@ -4,6 +4,7 @@ import Vuex from "vuex";
 
 // import { createStore } from 'vuex';
 
+import { authentication } from "./authentication.module";
 import { users } from "./users.module";
 
 Vue.use(Vuex);
@@ -16,7 +17,7 @@ Vue.use(Vuex);
 
 export const store = new createStore({
   modules: {
-    // authentication,
+    authentication,
     users,
   },
 });

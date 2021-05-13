@@ -63,6 +63,7 @@ export default {
   },
   methods: {
     handleSubmit(e) {
+      console.log("e -> ", e);
       this.submitted = true;
       const { username, password } = this;
       const { dispatch } = this.$store;
