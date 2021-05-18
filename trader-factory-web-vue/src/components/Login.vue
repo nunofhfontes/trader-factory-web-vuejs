@@ -1,18 +1,20 @@
 <template>
   <div>
-    <div class="alert alert-info">
+    <!-- <div class="alert alert-info">
       Username: test<br />
       Password: test
-    </div>
-    <h2>Login</h2>
+    </div> -->
+    <h2 class="text-2xl font-bold mb-4">Login</h2>
     <form @submit.prevent="handleSubmit">
       <div class="form-group">
-        <label for="username">Username</label>
+        <label for="username" class="relative h-10 input-component mb-5"
+          >Username</label
+        >
         <input
           type="text"
           v-model="username"
           name="username"
-          class="form-control"
+          class="form-control h-full border-gray-300 px-2 transition-all border-blue rounded-sm"
           :class="{ 'is-invalid': submitted && !username }"
         />
         <div v-show="submitted && !username" class="invalid-feedback">
@@ -25,7 +27,7 @@
           type="password"
           v-model="password"
           name="password"
-          class="form-control"
+          class="form-control h-full border-gray-300 px-2 transition-all border-blue rounded-sm"
           :class="{ 'is-invalid': submitted && !password }"
         />
         <div v-show="submitted && !password" class="invalid-feedback">
@@ -74,3 +76,26 @@ export default {
   },
 };
 </script>
+<style>
+label {
+  top: 0%;
+  transform: translateY(-50%);
+  font-size: 11px;
+  color: rgba(37, 99, 235, 1);
+}
+.empty input:not(:focus) + label {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+input:not(:focus) + label {
+  color: rgba(70, 70, 70, 1);
+}
+input {
+  border-width: 1px;
+}
+input:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 1);
+}
+</style>
