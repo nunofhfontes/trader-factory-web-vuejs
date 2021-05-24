@@ -13,6 +13,8 @@ export const authentication = {
     login({ dispatch, commit }, { username, password }) {
       commit("loginRequest", { username });
 
+      console.log("login action on authentication module.");
+
       userService.login(username, password).then(
         (user) => {
           commit("loginSuccess", user);
@@ -20,6 +22,7 @@ export const authentication = {
         },
         (error) => {
           commit("loginFailure", error);
+          console.log("error on auth!! -> ", error);
           dispatch("alert/error", error, { root: true });
         }
       );

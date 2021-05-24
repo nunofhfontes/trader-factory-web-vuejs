@@ -1,5 +1,7 @@
 import { authHeader } from "../_helpers";
 
+const API_BASE_URL = process.env.VUE_APP_API_BASEURL;
+
 export const userService = {
   login,
   logout,
@@ -13,7 +15,8 @@ function login(username, password) {
     body: JSON.stringify({ username, password }),
   };
 
-  return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
+  // return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
+  return fetch(`${API_BASE_URL}/users/authenticate`, requestOptions)
     .then(handleResponse)
     .then((user) => {
       // login successful if there's a jwt token in the response
@@ -38,7 +41,9 @@ function getUser() {
   };
 
   // TODO - specify user
-  return fetch(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
+
+  // return fetch(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
+  return fetch(`${API_BASE_URL}/users`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {
