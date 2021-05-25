@@ -2,9 +2,8 @@ import { userService } from "../_services";
 import router from "../_helpers/router.js";
 
 const user = JSON.parse(sessionStorage.getItem("user"));
-const initialState = user
-  ? { status: { loggedIn: true }, user }
-  : { status: {}, user: null };
+// eslint-disable-next-line prettier/prettier
+const initialState = user ? { status: { loggedIn: true }, user } : { status: {}, user: null };
 
 console.log("Check router on authentication.module.js file -> ", router);
 
@@ -21,6 +20,7 @@ export const authentication = {
 
       userService.login(username, password).then(
         (user) => {
+          console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
           commit("loginSuccess", user);
           router.push("/");
         },
@@ -46,6 +46,8 @@ export const authentication = {
     loginSuccess(state, user) {
       state.status = { loggedIn: true };
       state.user = user;
+
+      console.log("loginSuccess mutation, check state", state);
     },
     loginFailure(state) {
       state.status = {};
