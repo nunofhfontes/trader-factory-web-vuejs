@@ -31,7 +31,8 @@ function login(username, password) {
 
 function logout() {
   // remove user from local storage to log user out
-  localStorage.removeItem("user");
+  console.log("removing user from sessionstorage on user service file");
+  sessionStorage.removeItem("user");
 }
 
 function getUser() {

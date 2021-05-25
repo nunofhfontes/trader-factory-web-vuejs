@@ -34,6 +34,7 @@ export const authentication = {
       console.log("After login");
     },
     logout({ commit }) {
+      console.log("login out on auth module");
       userService.logout();
       commit("logout");
     },
@@ -56,6 +57,7 @@ export const authentication = {
     logout(state) {
       state.status = {};
       state.user = null;
+      console.log("Logout Mutation, check state -> ", state);
     },
   },
 };
