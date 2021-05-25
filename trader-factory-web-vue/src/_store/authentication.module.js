@@ -1,10 +1,12 @@
 import { userService } from "../_services";
-import { router } from "../_helpers";
+import router from "../_helpers/router.js";
 
 const user = JSON.parse(sessionStorage.getItem("user"));
 const initialState = user
   ? { status: { loggedIn: true }, user }
   : { status: {}, user: null };
+
+console.log("Check router on authentication.module.js file -> ", router);
 
 export const authentication = {
   namespaced: true,
@@ -14,6 +16,8 @@ export const authentication = {
       commit("loginRequest", { username });
 
       console.log("login action on authentication module.");
+
+      console.log("Check router -> ", router);
 
       userService.login(username, password).then(
         (user) => {
@@ -26,6 +30,8 @@ export const authentication = {
           dispatch("alert/error", error, { root: true });
         }
       );
+
+      console.log("After login");
     },
     logout({ commit }) {
       userService.logout();

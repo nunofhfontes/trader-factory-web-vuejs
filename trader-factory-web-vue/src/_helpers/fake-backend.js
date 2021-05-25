@@ -44,6 +44,7 @@ export function configureFakeBackend() {
             });
           } else {
             // else return error
+            console.log("FAKE BACKEND - user and pass incorrect");
             reject("Username or password is incorrect");
           }
 

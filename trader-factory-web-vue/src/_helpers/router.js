@@ -67,6 +67,8 @@ router.beforeEach(function (to, from, next) {
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = sessionStorage.getItem("user");
 
+  console.log("On router. Is logged in? ", loggedIn);
+
   if (authRequired && !loggedIn) {
     return next("/login");
   }
@@ -79,5 +81,7 @@ router.beforeEach(function (to, from, next) {
 //   console.log("Global afterEach");
 //   console.log(to, from);
 // });
+
+console.log("Checking ROUTER on router.js file -> ", router);
 
 export default router;
