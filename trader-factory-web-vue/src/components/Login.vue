@@ -61,7 +61,13 @@ export default {
   },
   created() {
     // reset login status
+    console.log("Created Hook, dispatching --> authentication/logout <--");
     this.$store.dispatch("authentication/logout");
+
+    // detecting window reload
+    window["onbeforeunload"] = function () {
+      return "Are you sure you want to close the window?";
+    };
   },
   methods: {
     handleSubmit(e) {
