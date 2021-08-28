@@ -5,8 +5,6 @@ const user = JSON.parse(sessionStorage.getItem("user"));
 // eslint-disable-next-line prettier/prettier
 const initialState = user ? { status: { loggedIn: true }, user } : { status: {}, user: null };
 
-console.log("Check router on authentication.module.js file -> ", router);
-
 export const authentication = {
   namespaced: true,
   state: initialState,

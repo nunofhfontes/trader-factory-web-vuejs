@@ -65,10 +65,10 @@
           </div>
           <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4">
-              <Link
+              <router-link
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 to="/dashboard"
-                >Dashboard</Link
+                >Dashboard</router-link
               >
               <router-link
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -76,20 +76,20 @@
               >
                 Dashboard
               </router-link>
-              <Link
+              <router-link
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 to="/portfolio"
-                >Portfolio</Link
+                >Portfolio</router-link
               >
-              <Link
+              <router-link
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 to="/fundamentals"
-                >Fundamentals</Link
+                >Fundamentals</router-link
               >
-              <Link
+              <router-link
                 class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 to="/techanalysis"
-                >Tecnical Analysis</Link
+                >Tecnical Analysis</router-link
               >
             </div>
           </div>

@@ -10,8 +10,6 @@ configureFakeBackend();
 
 // createApp(App).mount("#app");
 
-console.log("Check router on main.js file -> ", router);
-
 const app = createApp(App);
 app.use(router);
 app.use(store);

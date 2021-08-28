@@ -82,6 +82,4 @@ router.beforeEach(function (to, from, next) {
 //   console.log(to, from);
 // });
 
-console.log("Checking ROUTER on router.js file -> ", router);
-
 export default router;
